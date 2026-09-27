@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Priyotosh Mandal - Projects and Engineering Showcase for ApexPlanet Web Development Internship.">
+  <meta name="author" content="Priyotosh Mandal">
+  <title>Projects Showcase | Priyotosh Mandal Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Priyotosh Mandal Portfolio Home">
+        <div class="brand-logo-icon">P</div>
+        <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="todo.html" class="nav-link">To-Do / Notes <span class="nav-badge">App</span></a>
+        <a href="products.html" class="nav-link">Products <span class="nav-badge">Store</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-badge">Internship Work</span>
+        <h1 class="section-title">Projects & Applications</h1>
+        <p class="section-desc">
+          Explore complete web applications built with pure HTML5, CSS3 layout engines, and modular vanilla JavaScript.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="tasks">
+
+        <!-- Project 1: Requirement 2 To-Do App -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/smartwatch.svg" alt="To-Do Task Management App">
+            <span class="project-badge">Requirement 2 • App</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">To-Do Productivity App (localStorage)</h3>
+            <p class="project-desc">
+              A responsive task management application featuring client-side persistence with <code>localStorage</code>, full CRUD actions, task completion toggles, priority levels, and dynamic statistics.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Permanent data persistence with <code>localStorage</code></span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Task filters: All, Active, Completed + Live Search</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Edit modal, priority tags & task completion analytics</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">localStorage</span>
+              <span class="project-tag">CRUD</span>
+              <span class="project-tag">DOM Manipulation</span>
+              <span class="project-tag">Vanilla JS</span>
+            </div>
+            <div class="project-actions">
+              <a href="todo.html" class="btn btn-primary btn-sm">Launch App</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Requirement 3 Product Listing -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/laptop.svg" alt="Dynamic Product Catalog & Filtering">
+            <span class="project-badge">Requirement 3 • Store</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Product Catalog with Filtering & Sorting</h3>
+            <p class="project-desc">
+              Interactive E-Commerce product catalog with multi-faceted filtering (category, price range, rating), multi-criteria sorting (price, rating, name), instant search, and quick view modal.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Category, Price Bracket, and Star Rating filters</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Combined filtering algorithm with zero page reloads</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Product quick view modal & interactive cart counter</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Dynamic Data</span>
+              <span class="project-tag">Multi-Filter</span>
+              <span class="project-tag">CSS Grid</span>
+              <span class="project-tag">Modals</span>
+            </div>
+            <div class="project-actions">
+              <a href="products.html" class="btn btn-primary btn-sm">Explore Store</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Task 3 Interactive Quiz & Weather API Hub -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/monitor.svg" alt="Task 3 Weather Forecast & Quiz Platform">
+            <span class="project-badge">Task 3 Project</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Interactive Quiz & Weather API Hub</h3>
+            <p class="project-desc">
+              Asynchronous web app fetching real-time meteorological metrics via the Open-Meteo REST API with geocoding, plus an interactive frontend quiz with animated SVG circular score gauges.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Live REST API integration with async/await</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Multi-question quiz engine with instant feedback</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Animated SVG progress circular gauges</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Fetch API</span>
+              <span class="project-tag">Open-Meteo</span>
+              <span class="project-tag">Geocoding</span>
+              <span class="project-tag">SVG Animation</span>
+            </div>
+            <div class="project-actions">
+              <a href="../Task 3/index.html" class="btn btn-secondary btn-sm">Open Task 3</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Task 2 TaskFlow Dashboard -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/keyboard.svg" alt="Task 2 TaskFlow Productivity Dashboard">
+            <span class="project-badge">Task 2 Project</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">TaskFlow Smart Task Dashboard</h3>
+            <p class="project-desc">
+              Productivity suite featuring dynamic DOM-based task management, live completion metrics calculation, and accessible contact form with custom regex validation.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Regex email and input length validation</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Live statistics: Total, Completed, Pending</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Glassmorphism UI and fluid mobile navigation</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Form Validation</span>
+              <span class="project-tag">DOM Manipulation</span>
+              <span class="project-tag">CSS Grid</span>
+              <span class="project-tag">Flexbox</span>
+            </div>
+            <div class="project-actions">
+              <a href="../Task 2/index.html" class="btn btn-secondary btn-sm">Open Task 2</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Task 1 Developer Profile -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/camera.svg" alt="Task 1 Developer Profile Foundation">
+            <span class="project-badge">Task 1 Project</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Developer Profile & Foundation</h3>
+            <p class="project-desc">
+              Clean foundational personal profile webpage establishing semantic HTML5 document hierarchy, custom CSS properties design system, and responsive viewport settings.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Semantic HTML5 document hierarchy & metadata</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>CSS custom properties (Design Tokens)</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Responsive media query foundations</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">HTML5 Semantics</span>
+              <span class="project-tag">CSS Variables</span>
+              <span class="project-tag">Responsive Design</span>
+            </div>
+            <div class="project-actions">
+              <a href="../Task 1/index.html" class="btn btn-secondary btn-sm">Open Task 1</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Contact & Client Validation Portal -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="assets/images/speaker.svg" alt="Client Contact Portal">
+            <span class="project-badge">Interactive Module</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Client-Side Contact & Validation Portal</h3>
+            <p class="project-desc">
+              Dedicated accessible contact portal featuring real-time client-side input validation, error handling, live character counters, and non-blocking toast feedback.
+            </p>
+            <div class="project-features">
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Real-time input and blur event validation</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Accessible error states and character counter</span>
+              </div>
+              <div class="project-feature-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Toast alert system replacing intrusive alert() popups</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Event-Driven</span>
+              <span class="project-tag">Form Security</span>
+              <span class="project-tag">Accessibility</span>
+            </div>
+            <div class="project-actions">
+              <a href="contact.html" class="btn btn-secondary btn-sm">Open Contact</a>
+              <a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">P</div>
+            <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+          </a>
+          <p>
+            ApexPlanet Web Development Internship — Task 4 Full Project Implementation. Engineered with clean, accessible Vanilla Web Technologies.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Applications</h4>
+          <ul class="footer-links">
+            <li><a href="todo.html">To-Do Application</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="projects.html#tasks">Internship Tasks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/priyotoshnmandal" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="contact.html">Send Message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Priyotosh Mandal • ApexPlanet Software Pvt. Ltd. Internship</div>
+        <div>Built with semantic HTML5, CSS3 Variables, and Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

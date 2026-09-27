@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Priyotosh Mandal - Frontend Web Developer and ApexPlanet Intern. Submit inquiries and feedback.">
+  <meta name="author" content="Priyotosh Mandal">
+  <title>Contact Me | Priyotosh Mandal Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Priyotosh Mandal Portfolio Home">
+        <div class="brand-logo-icon">P</div>
+        <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="todo.html" class="nav-link">To-Do / Notes <span class="nav-badge">App</span></a>
+        <a href="products.html" class="nav-link">Products <span class="nav-badge">Store</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-badge">Get in Touch</span>
+        <h1 class="section-title">Contact & Inquiries</h1>
+        <p class="section-desc">
+          Have questions about my internship projects or want to discuss frontend opportunities? Send a message below.
+        </p>
+      </div>
+
+      <!-- Contact Layout Grid -->
+      <div class="contact-layout">
+
+        <!-- Contact Cards Column -->
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon">📬</div>
+            <div class="contact-card-info">
+              <h4>Email</h4>
+              <p>priyotoshmandal.dev@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">💻</div>
+            <div class="contact-card-info">
+              <h4>GitHub Profile</h4>
+              <p><a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light);">github.com/priyotosh22</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">💼</div>
+            <div class="contact-card-info">
+              <h4>LinkedIn</h4>
+              <p><a href="https://www.linkedin.com/in/priyotoshnmandal" target="_blank" rel="noopener noreferrer" style="color: var(--primary-light);">linkedin.com/in/priyotoshnmandal</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div class="contact-card-info">
+              <h4>Location & Timezone</h4>
+              <p>West Bengal, India (IST / UTC+5:30)</p>
+            </div>
+          </div>
+
+          <!-- Note Box -->
+          <div class="highlight-box" style="margin-top: 0.5rem;">
+            <strong>Frontend Validation Notice:</strong> This contact form validates all fields in real-time on the client side using pure JavaScript (regular expressions and length assertions).
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-wrapper">
+          
+          <!-- Success Alert Box (initially hidden) -->
+          <div id="contactSuccessBox" style="display: none; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; color: #34d399; font-weight: 700; font-size: 1rem; margin-bottom: 0.35rem;">
+              <span>✓</span> Form Submitted Successfully!
+            </div>
+            <p style="color: #a7f3d0; font-size: 0.875rem; line-height: 1.5;">
+              Thank you for reaching out! Your client-side validation passed completely.
+            </p>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <!-- Name Input -->
+            <div class="form-group">
+              <label for="contactName" class="form-label">Full Name <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="contactName" 
+                class="form-control" 
+                placeholder="e.g. Priyotosh Mandal" 
+                required
+                aria-describedby="nameFeedback"
+              >
+              <div id="nameFeedback" class="form-feedback"></div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="contactEmail" 
+                class="form-control" 
+                placeholder="e.g. name@example.com" 
+                required
+                aria-describedby="emailFeedback"
+              >
+              <div id="emailFeedback" class="form-feedback"></div>
+            </div>
+
+            <!-- Subject Input -->
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="contactSubject" 
+                class="form-control" 
+                placeholder="e.g. Internship Project Feedback" 
+                required
+                aria-describedby="subjectFeedback"
+              >
+              <div id="subjectFeedback" class="form-feedback"></div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message <span class="required">*</span></label>
+              <textarea 
+                id="contactMessage" 
+                class="form-control" 
+                rows="5" 
+                placeholder="Write your message here (minimum 10 characters)..." 
+                required
+                maxlength="500"
+                aria-describedby="messageFeedback"
+              ></textarea>
+              <div id="messageFeedback" class="form-feedback"></div>
+              <div id="messageCount" class="char-counter">0 / 500 characters</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary btn-lg" style="width: 100%;">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">P</div>
+            <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+          </a>
+          <p>
+            ApexPlanet Web Development Internship — Task 4 Full Project Implementation. Engineered with clean, accessible Vanilla Web Technologies.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Applications</h4>
+          <ul class="footer-links">
+            <li><a href="todo.html">To-Do Application</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="projects.html#tasks">Internship Tasks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/priyotoshnmandal" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="contact.html">Send Message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Priyotosh Mandal • ApexPlanet Software Pvt. Ltd. Internship</div>
+        <div>Built with semantic HTML5, CSS3 Variables, and Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

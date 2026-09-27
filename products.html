@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ApexStore - Dynamic Product Listing with Category, Price, and Rating Filtering, Live Search, and Sorting Options. Built for ApexPlanet Internship Task 4.">
+  <meta name="author" content="Priyotosh Mandal">
+  <title>Products Catalog | Filtering & Sorting Suite</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Priyotosh Mandal Portfolio Home">
+        <div class="brand-logo-icon">P</div>
+        <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="todo.html" class="nav-link">To-Do / Notes <span class="nav-badge">App</span></a>
+        <a href="products.html" class="nav-link">Products <span class="nav-badge" id="navCartCount" style="display: none; background: var(--accent-emerald);">0</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-badge">Requirement 3 • Interactive Interface</span>
+        <h1 class="section-title">Product Catalog & Filter Suite</h1>
+        <p class="section-desc">
+          Filter and sort sample products by category, price range, customer rating, and text search in real time without reloading the page.
+        </p>
+      </div>
+
+      <!-- Main Products Layout Grid -->
+      <div class="products-layout">
+
+        <!-- Sidebar Filters -->
+        <aside class="filter-sidebar" aria-label="Product Filters">
+          <div class="filter-sidebar-header">
+            <h2 class="filter-sidebar-title">
+              <span>⚙️</span> Filters
+            </h2>
+            <button type="button" id="clearFiltersBtn" class="btn btn-secondary btn-sm" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">
+              Clear All
+            </button>
+          </div>
+
+          <!-- Category Filter Section -->
+          <div class="filter-section">
+            <h3 class="filter-heading">Categories</h3>
+            <div class="category-filter-list" role="group" aria-label="Filter by Category">
+              <button type="button" class="category-filter-btn active" data-category="All">
+                <span>All Products</span>
+                <span class="category-count">12</span>
+              </button>
+              <button type="button" class="category-filter-btn" data-category="Electronics">
+                <span>Electronics</span>
+                <span class="category-count">3</span>
+              </button>
+              <button type="button" class="category-filter-btn" data-category="Audio & Accessories">
+                <span>Audio & Accessories</span>
+                <span class="category-count">3</span>
+              </button>
+              <button type="button" class="category-filter-btn" data-category="Wearables">
+                <span>Wearables</span>
+                <span class="category-count">1</span>
+              </button>
+              <button type="button" class="category-filter-btn" data-category="Fashion">
+                <span>Fashion</span>
+                <span class="category-count">3</span>
+              </button>
+              <button type="button" class="category-filter-btn" data-category="Home Living">
+                <span>Home Living</span>
+                <span class="category-count">2</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Price Filter Section -->
+          <div class="filter-section">
+            <h3 class="filter-heading">Filter by Price</h3>
+            
+            <!-- Price Bracket Radio Options -->
+            <div class="price-bracket-options">
+              <label class="price-radio-label">
+                <input type="radio" name="priceBracket" value="all" checked>
+                <span>All Prices</span>
+              </label>
+              <label class="price-radio-label">
+                <input type="radio" name="priceBracket" value="under2k">
+                <span>Under ₹2,000</span>
+              </label>
+              <label class="price-radio-label">
+                <input type="radio" name="priceBracket" value="2k-5k">
+                <span>₹2,000 – ₹5,000</span>
+              </label>
+              <label class="price-radio-label">
+                <input type="radio" name="priceBracket" value="5k-15k">
+                <span>₹5,000 – ₹15,000</span>
+              </label>
+              <label class="price-radio-label">
+                <input type="radio" name="priceBracket" value="above15k">
+                <span>Above ₹15,000</span>
+              </label>
+            </div>
+
+            <!-- Custom Max Price Range Slider -->
+            <div class="price-range-wrap" style="margin-top: 1.25rem;">
+              <div style="font-size: 0.8125rem; color: var(--text-secondary);">Max Price Threshold:</div>
+              <input 
+                type="range" 
+                id="priceRangeSlider" 
+                class="price-range-slider" 
+                min="1000" 
+                max="100000" 
+                step="1000" 
+                value="100000"
+                aria-label="Filter maximum price slider"
+              >
+              <div class="price-range-labels">
+                <span>₹1,000</span>
+                <span id="maxPriceVal" style="color: var(--primary-light);">₹1,00,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rating Filter Section -->
+          <div class="filter-section" style="margin-bottom: 0;">
+            <h3 class="filter-heading">Customer Rating</h3>
+            <div class="rating-filter-options">
+              <label class="price-radio-label">
+                <input type="checkbox" name="ratingFilter" value="4.8">
+                <span>★ 4.8 & Above</span>
+              </label>
+              <label class="price-radio-label">
+                <input type="checkbox" name="ratingFilter" value="4.5">
+                <span>★ 4.5 & Above</span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Products Display Area -->
+        <section class="products-main" aria-label="Products Catalog">
+          
+          <!-- Products Top Toolbar -->
+          <div class="products-toolbar">
+            <!-- Search Bar -->
+            <div class="product-search-box">
+              <span class="product-search-icon">🔍</span>
+              <input 
+                type="text" 
+                id="productSearch" 
+                class="product-search-input" 
+                placeholder="Search by title, specs, or category..."
+                aria-label="Search products"
+              >
+            </div>
+
+            <!-- Result Count & Sort Controls -->
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+              <span id="productsResultCount" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">
+                Showing 12 products
+              </span>
+              <div class="products-sort-wrap">
+                <label for="productSort" class="products-sort-label">Sort by:</label>
+                <select id="productSort" class="products-sort-select" aria-label="Sort products by criteria">
+                  <option value="default">✨ Featured / Default</option>
+                  <option value="price-asc">💵 Price: Low to High</option>
+                  <option value="price-desc">💎 Price: High to Low</option>
+                  <option value="rating-desc">⭐ Rating: High to Low</option>
+                  <option value="name-asc">🔤 Name: A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Filter Pills Bar -->
+          <div id="activeFiltersBar" class="active-filters-bar" style="display: none;"></div>
+
+          <!-- Products Grid -->
+          <div id="productsGrid" class="products-grid" aria-live="polite">
+            <!-- Dynamic JavaScript Product Cards rendered here -->
+          </div>
+
+          <!-- Empty State (Hidden by default) -->
+          <div id="productsEmptyState" class="empty-state" style="display: none; background: var(--bg-card); border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); padding: 4rem 2rem;">
+            <div class="empty-state-icon">🔍</div>
+            <h4>No products found</h4>
+            <p>No products match your active search and filter combinations.</p>
+            <button type="button" id="resetEmptyBtn" class="btn btn-primary" style="margin-top: 1.25rem;">
+              Clear All Filters
+            </button>
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Product Quick View Modal -->
+  <div id="quickViewModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+    <div class="modal-card" style="max-width: 620px;">
+      <div class="modal-header">
+        <h3 id="qvTitle" class="modal-title">Product Details</h3>
+        <button type="button" class="btn-icon modal-close-btn" aria-label="Close product preview">&times;</button>
+      </div>
+      <div class="quickview-layout">
+        <div class="quickview-media">
+          <img id="qvImage" src="" alt="Product Preview" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <span id="qvCategory" class="product-cat-tag" style="position: static; align-self: flex-start;">Category</span>
+          <div id="qvRating" style="color: #fbbf24; font-size: 0.9rem; font-weight: 600;"></div>
+          <div id="qvPrice" style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">₹0</div>
+          <p id="qvDesc" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;"></p>
+          <div style="margin-top: auto; padding-top: 1rem; display: flex; gap: 0.5rem;">
+            <button type="button" id="qvAddToCartBtn" class="btn btn-primary" style="flex: 1;">
+              + Add to Cart
+            </button>
+            <button type="button" class="btn btn-secondary modal-close-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">P</div>
+            <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+          </a>
+          <p>
+            ApexPlanet Web Development Internship — Task 4 Full Project Implementation. Engineered with clean, accessible Vanilla Web Technologies.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Applications</h4>
+          <ul class="footer-links">
+            <li><a href="todo.html">To-Do Application</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="projects.html#tasks">Internship Tasks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/priyotoshnmandal" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="contact.html">Send Message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Priyotosh Mandal • ApexPlanet Software Pvt. Ltd. Internship</div>
+        <div>Built with semantic HTML5, CSS3 Variables, and Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

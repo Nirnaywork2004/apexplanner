@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+    <defs>
+      <linearGradient id="bg_mon" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0f172a"/>
+        <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+      <linearGradient id="mon_disp" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1e1b4b"/>
+        <stop offset="50%" stop-color="#065f46"/>
+        <stop offset="100%" stop-color="#0284c7"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="300" rx="16" fill="url(#bg_mon)"/>
+    <!-- Stand -->
+    <line x1="200" y1="195" x2="200" y2="245" stroke="#64748b" stroke-width="8"/>
+    <ellipse cx="200" cy="245" rx="50" ry="8" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Screen Bezel -->
+    <rect x="70" y="55" width="260" height="145" rx="6" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <rect x="75" y="60" width="250" height="135" rx="4" fill="url(#mon_disp)"/>
+    <!-- Visual elements on screen -->
+    <circle cx="200" cy="120" r="30" fill="#ffffff" opacity="0.1"/>
+    <path d="M 85,160 Q 140,110 200,150 T 315,130" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
+    <rect x="90" y="75" width="40" height="8" rx="4" fill="#38bdf8" opacity="0.8"/>
+  </svg>

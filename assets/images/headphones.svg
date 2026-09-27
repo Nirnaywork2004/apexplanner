@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+    <defs>
+      <linearGradient id="bg_hp" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#090d16"/>
+        <stop offset="100%" stop-color="#182030"/>
+      </linearGradient>
+      <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#818cf8"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="300" rx="16" fill="url(#bg_hp)"/>
+    <circle cx="200" cy="150" r="90" fill="#6366f1" opacity="0.08"/>
+    <!-- Headband -->
+    <path d="M 120,165 C 120,80 280,80 280,165" fill="none" stroke="url(#metal)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 140,130 C 150,95 250,95 260,130" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+    <!-- Earcups -->
+    <rect x="100" y="145" width="36" height="65" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+    <rect x="264" y="145" width="36" height="65" rx="18" fill="#1e293b" stroke="#818cf8" stroke-width="3"/>
+    <rect x="108" y="155" width="20" height="45" rx="10" fill="#334155"/>
+    <rect x="272" y="155" width="20" height="45" rx="10" fill="#334155"/>
+    <circle cx="118" cy="177" r="5" fill="#38bdf8"/>
+    <circle cx="282" cy="177" r="5" fill="#818cf8"/>
+  </svg>

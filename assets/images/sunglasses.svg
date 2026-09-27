@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+    <defs>
+      <linearGradient id="bg_sg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0f172a"/>
+        <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+      <linearGradient id="sg_lens" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#1e293b"/>
+        <stop offset="100%" stop-color="#0f172a"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="300" rx="16" fill="url(#bg_sg)"/>
+    <!-- Frame Temples -->
+    <path d="M 90,140 L 70,110" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 310,140 L 330,110" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+    <!-- Bridge -->
+    <path d="M 185,135 Q 200,128 215,135" fill="none" stroke="#f59e0b" stroke-width="4"/>
+    <!-- Left Lens -->
+    <path d="M 95,130 Q 140,125 185,130 L 180,175 Q 140,195 100,175 Z" fill="url(#sg_lens)" stroke="#f59e0b" stroke-width="4"/>
+    <!-- Right Lens -->
+    <path d="M 215,130 Q 260,125 305,130 L 300,175 Q 260,195 220,175 Z" fill="url(#sg_lens)" stroke="#f59e0b" stroke-width="4"/>
+    <!-- Glare reflection -->
+    <line x1="110" y1="140" x2="135" y2="170" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+    <line x1="230" y1="140" x2="255" y2="170" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+  </svg>

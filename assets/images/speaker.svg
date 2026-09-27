@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+    <defs>
+      <linearGradient id="bg_spk" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0f172a"/>
+        <stop offset="100%" stop-color="#1e293b"/>
+      </linearGradient>
+      <linearGradient id="spk_mesh" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06b6d4"/>
+        <stop offset="100%" stop-color="#3b82f6"/>
+      </linearGradient>
+    </defs>
+    <rect width="400" height="300" rx="16" fill="url(#bg_spk)"/>
+    <!-- Cylinder Speaker -->
+    <rect x="135" y="70" width="130" height="160" rx="20" fill="url(#spk_mesh)"/>
+    <ellipse cx="200" cy="70" rx="65" ry="16" fill="#0891b2"/>
+    <ellipse cx="200" cy="230" rx="65" ry="16" fill="#1e3a8a"/>
+    <!-- Mesh pattern lines -->
+    <line x1="145" y1="110" x2="255" y2="110" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="145" y1="130" x2="255" y2="130" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="145" y1="150" x2="255" y2="150" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="145" y1="170" x2="255" y2="170" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="145" y1="190" x2="255" y2="190" stroke="#ffffff" stroke-width="2" opacity="0.3" stroke-dasharray="3,3"/>
+    <!-- Center Logo/Buttons -->
+    <circle cx="200" cy="150" r="16" fill="#0f172a"/>
+    <polygon points="196,143 207,150 196,157" fill="#38bdf8"/>
+    <!-- Strap -->
+    <path d="M 265,90 C 290,100 290,140 265,150" fill="none" stroke="#f97316" stroke-width="6" stroke-linecap="round"/>
+  </svg>

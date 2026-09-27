@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="To-Do Productivity App with localStorage persistence, dynamic filters, and task management. Built for ApexPlanet Internship Task 4.">
+  <meta name="author" content="Priyotosh Mandal">
+  <title>To-Do Application | LocalStorage Persistence</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Priyotosh Mandal Portfolio Home">
+        <div class="brand-logo-icon">P</div>
+        <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="todo.html" class="nav-link">To-Do / Notes <span class="nav-badge">App</span></a>
+        <a href="products.html" class="nav-link">Products <span class="nav-badge">Store</span></a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container todo-app-container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-badge">Requirement 2 • Data Persistence</span>
+        <h1 class="section-title">Smart To-Do & Task Manager</h1>
+        <p class="section-desc">
+          Manage your tasks with automatic browser <code>localStorage</code> persistence. Tasks remain synchronized even after browser reloads.
+        </p>
+      </div>
+
+      <!-- Main To-Do Dashboard Card -->
+      <div class="todo-dashboard">
+        
+        <!-- Live Task Statistics Bar -->
+        <div class="todo-stats-bar">
+          <div class="todo-stat-box">
+            <span class="todo-stat-num" id="totalTasksCount">0</span>
+            <span class="todo-stat-lbl">Total Tasks</span>
+          </div>
+          <div class="todo-stat-box">
+            <span class="todo-stat-num" id="activeTasksCount" style="color: var(--accent-amber);">0</span>
+            <span class="todo-stat-lbl">Pending Tasks</span>
+          </div>
+          <div class="todo-stat-box">
+            <span class="todo-stat-num" id="completedTasksCount" style="color: var(--accent-emerald);">0</span>
+            <span class="todo-stat-lbl">Completed</span>
+          </div>
+        </div>
+
+        <!-- Task Completion Progress Bar -->
+        <div class="todo-progress-wrapper">
+          <div class="todo-progress-header">
+            <span style="color: var(--text-secondary);">Productivity Progress</span>
+            <span id="todoProgressText" style="color: var(--primary-light);">0% Completed</span>
+          </div>
+          <div class="todo-progress-bar">
+            <div id="todoProgressFill" class="todo-progress-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Add Task Form -->
+        <form id="todoForm" class="todo-form">
+          <div class="todo-input-wrap">
+            <input 
+              type="text" 
+              id="todoInput" 
+              class="todo-input" 
+              placeholder="What do you need to accomplish today?..." 
+              autocomplete="off"
+              aria-label="New task description"
+            >
+          </div>
+          <select id="todoPriority" class="todo-priority-select" aria-label="Task priority">
+            <option value="high">🔥 High Priority</option>
+            <option value="medium" selected>⚡ Medium Priority</option>
+            <option value="low">🌱 Low Priority</option>
+          </select>
+          <button type="submit" id="addTodoBtn" class="btn btn-primary">
+            + Add Task
+          </button>
+        </form>
+
+        <!-- Task Controls & Filters -->
+        <div class="todo-controls">
+          <!-- Filter Tabs -->
+          <div class="todo-filter-tabs" role="tablist">
+            <button type="button" class="todo-filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button type="button" class="todo-filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+            <button type="button" class="todo-filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+          </div>
+
+          <!-- Search in tasks -->
+          <div style="flex: 1; max-width: 240px; min-width: 160px;">
+            <input 
+              type="text" 
+              id="todoSearchInput" 
+              class="form-control" 
+              placeholder="🔍 Search tasks..." 
+              style="padding: 0.45rem 0.85rem; font-size: 0.875rem;"
+              aria-label="Filter tasks by search text"
+            >
+          </div>
+
+          <!-- Clear Completed Button -->
+          <button type="button" id="clearCompletedBtn" class="btn btn-secondary btn-sm">
+            Clear Completed
+          </button>
+        </div>
+
+        <!-- Tasks List Container -->
+        <div id="todoList" class="todo-list" aria-live="polite">
+          <!-- Rendered dynamically by todo.js -->
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Edit Task Modal -->
+  <div id="editModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="editModalTitle" class="modal-title">Edit Task</h3>
+        <button type="button" class="btn-icon modal-close-btn" aria-label="Close edit dialog">&times;</button>
+      </div>
+      <form id="editTaskForm">
+        <div class="form-group">
+          <label for="editTaskInput" class="form-label">Task Description</label>
+          <input type="text" id="editTaskInput" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="editTaskPriority" class="form-label">Priority Level</label>
+          <select id="editTaskPriority" class="form-control">
+            <option value="high">High Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="low">Low Priority</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="confirmModalTitle" class="modal-title">Confirmation</h3>
+        <button type="button" class="btn-icon modal-close-btn" aria-label="Close confirmation dialog">&times;</button>
+      </div>
+      <p id="confirmModalMessage" style="color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+        <button type="button" id="confirmActionBtn" class="btn btn-danger">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">P</div>
+            <div class="brand-logo-text">Priyotosh<span>.dev</span></div>
+          </a>
+          <p>
+            ApexPlanet Web Development Internship — Task 4 Full Project Implementation. Engineered with clean, accessible Vanilla Web Technologies.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Applications</h4>
+          <ul class="footer-links">
+            <li><a href="todo.html">To-Do Application</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="projects.html#tasks">Internship Tasks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/priyotosh22" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/priyotoshnmandal" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="contact.html">Send Message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Priyotosh Mandal • ApexPlanet Software Pvt. Ltd. Internship</div>
+        <div>Built with semantic HTML5, CSS3 Variables, and Vanilla JavaScript.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>
