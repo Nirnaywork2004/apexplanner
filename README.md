@@ -75,7 +75,7 @@ Task 4/
 │   │   ├── lamp.svg
 │   │   ├── laptop.svg
 │   │   ├── monitor.svg
-│   │   ├── profile.jpg
+│   │   ├── nirnay-mondal-profile.jpg
 │   │   ├── smartwatch.svg
 │   │   ├── sneakers.svg
 │   │   ├── speaker.svg
