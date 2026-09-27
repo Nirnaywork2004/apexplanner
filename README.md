@@ -121,8 +121,8 @@ Task 4/
 
 ## Developer Details
 
-- **Developer**: Priyotosh Mandal
+- **Developer**: Nirnay Mondal
 - **Internship**: ApexPlanet Software Pvt. Ltd. (45-Day Web Development Internship)
-- **GitHub**: [@priyotosh22](https://github.com/priyotosh22)
-- **LinkedIn**: [priyotoshnmandal](https://www.linkedin.com/in/priyotoshnmandal)
+- **GitHub**: [@Nirnaywork2004](https://github.com/Nirnaywork2004)
+- **LinkedIn**: [Nirnay Mondal](https://www.linkedin.com/in/nirnay-mondal-5b42a334a/)
 

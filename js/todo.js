@@ -1,7 +1,7 @@
 /**
  * APEXPLANET WEB DEVELOPMENT INTERNSHIP - TASK 4
  * Requirement 2: To-Do Application with localStorage Persistence & CRUD Operations
- * Developer: Priyotosh Mandal
+ * Developer: Nirnay Mondal
  */
 
 const STORAGE_KEY = 'apexplanet_tasks_v4';

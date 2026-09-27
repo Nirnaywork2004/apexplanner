@@ -1,7 +1,7 @@
 /**
  * APEXPLANET WEB DEVELOPMENT INTERNSHIP - TASK 4
  * Requirement 3: Dynamic Product Listing, Multi-Faceted Filtering & Sorting
- * Developer: Priyotosh Mandal
+ * Developer: Nirnay Mondal
  */
 
 // Dataset: 12 Realistic High-Quality Products

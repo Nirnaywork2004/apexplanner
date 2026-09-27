@@ -1,7 +1,7 @@
 /**
  * APEXPLANET WEB DEVELOPMENT INTERNSHIP - TASK 4
  * Global JavaScript: Navigation, Active State, Form Validation & UI Helpers
- * Developer: Priyotosh Mandal
+ * Developer: Nirnay Mondal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
